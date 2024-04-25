@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2024-03-29 15:23:21.625061",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "school_information_section",
+  "branch",
+  "school",
+  "grade",
+  "column_break_dkbtc",
+  "program",
+  "section",
+  "section_break_ehcuy",
+  "subject_allocation"
+ ],
+ "fields": [
+  {
+   "fieldname": "school_information_section",
+   "fieldtype": "Section Break",
+   "label": "School Information"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "school",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "School",
+   "options": "School",
+   "reqd": 1
+  },
+  {
+   "fieldname": "program",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Program",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Grade",
+   "options": "Grade",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "fieldname": "subject_allocation",
+   "fieldtype": "Table",
+   "label": "Subject Allocation",
+   "options": "Class Schedule Details"
+  },
+  {
+   "fieldname": "column_break_dkbtc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ehcuy",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "links": [],
+ "modified": "2024-03-29 15:47:40.948480",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Class Schedule",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Instructor"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student",
+   "share": 1
+  }
+ ],
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

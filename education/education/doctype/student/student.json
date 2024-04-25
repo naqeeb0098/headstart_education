@@ -9,20 +9,54 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_1",
-  "enabled",
+  "column_break_mupon",
+  "naming_series",
   "section_break_3",
   "first_name",
+  "first",
   "middle_name",
   "last_name",
-  "column_break_4",
-  "naming_series",
-  "joining_date",
+  "date_of_birth",
+  "column_break_g6jlk",
+  "father_name",
+  "father_cnic",
+  "father_mobile_no",
+  "father_email",
+  "father_occupation",
+  "fo_remarks",
   "user",
+  "column_break_4",
+  "mother_name",
+  "mother_cnic",
+  "mother_mobile_no",
+  "mother_email",
+  "mother_occupation",
+  "mo_remarks",
+  "admission_information_section",
+  "enabled",
+  "admission_date",
+  "joining_date",
+  "student_status",
+  "admission_category",
+  "enrollment_type",
+  "school_information_section",
+  "branch",
+  "school",
+  "column_break_msn5t",
+  "program",
+  "grade",
+  "column_break_a1p98",
+  "section",
   "student_applicant",
   "image",
+  "email_or_sms_section",
+  "active",
+  "column_break_qgkxc",
+  "email_id",
+  "column_break_h4v1o",
+  "mobile_no",
   "section_break_7",
   "student_email_id",
-  "date_of_birth",
   "blood_group",
   "column_break_3",
   "student_mobile_number",
@@ -64,7 +98,8 @@
   },
   {
    "fieldname": "section_break_3",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Student Information"
   },
   {
    "fieldname": "first_name",
@@ -72,17 +107,6 @@
    "in_global_search": 1,
    "label": "First Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "middle_name",
-   "fieldtype": "Data",
-   "label": "Middle Name"
-  },
-  {
-   "fieldname": "last_name",
-   "fieldtype": "Data",
-   "in_global_search": 1,
-   "label": "Last Name"
   },
   {
    "fieldname": "user",
@@ -278,11 +302,206 @@
    "fieldtype": "Tab Break",
    "label": "Connections",
    "show_dashboard": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "school",
+   "fieldtype": "Link",
+   "label": "School",
+   "options": "School",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "fieldname": "program",
+   "fieldtype": "Link",
+   "label": "Program",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mupon",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "student_status",
+   "fieldtype": "Select",
+   "label": "Student Status",
+   "options": "On Roll\nWithdrawal\nFreeze\nPass out\nLeft"
+  },
+  {
+   "fieldname": "admission_category",
+   "fieldtype": "Select",
+   "label": "Admission Category",
+   "options": "\nPrivate\nRegular"
+  },
+  {
+   "fieldname": "admission_date",
+   "fieldtype": "Date",
+   "label": "Admission Date"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "label": "Grade",
+   "options": "Grade",
+   "reqd": 1
+  },
+  {
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "label": "Father Name"
+  },
+  {
+   "fieldname": "father_cnic",
+   "fieldtype": "Data",
+   "label": "Father CNIC"
+  },
+  {
+   "fieldname": "school_information_section",
+   "fieldtype": "Section Break",
+   "label": "School Information"
+  },
+  {
+   "fieldname": "column_break_g6jlk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_msn5t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_a1p98",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "father_mobile_no",
+   "fieldtype": "Data",
+   "label": "Father Mobile No"
+  },
+  {
+   "fieldname": "enrollment_type",
+   "fieldtype": "Select",
+   "label": "Enrollment Type",
+   "options": "New-Admission\nTransfer IN\nSLC In-Process\nRe-Admission\nTr-IN\nNormal"
+  },
+  {
+   "bold": 1,
+   "fieldname": "email_or_sms_section",
+   "fieldtype": "Section Break",
+   "label": "Email or SMS"
+  },
+  {
+   "depends_on": "active",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID"
+  },
+  {
+   "depends_on": "active",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "column_break_h4v1o",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "column_break_qgkxc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Name"
+  },
+  {
+   "fieldname": "admission_information_section",
+   "fieldtype": "Section Break",
+   "label": " Admission Information"
+  },
+  {
+   "fieldname": "mother_cnic",
+   "fieldtype": "Data",
+   "label": "Mother CNIC"
+  },
+  {
+   "fieldname": "mother_mobile_no",
+   "fieldtype": "Data",
+   "label": "Mother Mobile No"
+  },
+  {
+   "fieldname": "mother_email",
+   "fieldtype": "Data",
+   "label": "Mother Email"
+  },
+  {
+   "fieldname": "mother_occupation",
+   "fieldtype": "Select",
+   "label": "Mother Occupation",
+   "options": "Teacher\nLawyer\nOwner\nEngineer\nBusiness\nDesigner\nDirector\nGraphic Designer\nHousewife\nPrivate Job\nOphthalmology\nDoctor\nHOD\nHouse Wife\nCoach\nCEO\nManager\nLecturer\nProducer\nPsychotherapist\nAssistant Professor\nDeputy Accountant\nResearcher\nSenior Executive\nManaging Director\nSelf Employed\nStudent\nAssistant Director\nGovernment Employee\nPrivate Employee\nPharmacist\nSecretary\nSenior Vice President\nPsychologist or Speech therapist\nConsultant\nAdvertising\nArmed Forces\nFood Scientist\nResource Manager\nProject Director\nRegional Managing Director\nInternal Auditor\nProject Manager\nRegional Head\nJournalist\nRetired officer\nPrincipal\nInvestment Banker\nVice Principal\nRetired\nBusiness Analyst\nManager Business Process",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "father_email",
+   "fieldtype": "Data",
+   "label": "Father Email"
+  },
+  {
+   "fieldname": "father_occupation",
+   "fieldtype": "Select",
+   "label": "Father Occupation",
+   "options": "Teacher\nLawyer\nOwner\nEngineer\nBusiness\nDesigner\nDirector\nGraphic Designer\nHousewife\nPrivate Job\nOphthalmology\nDoctor\nHOD\nHouse Wife\nCoach\nCEO\nManager\nLecturer\nProducer\nPsychotherapist\nAssistant Professor\nDeputy Accountant\nResearcher\nSenior Executive\nManaging Director\nSelf Employed\nStudent\nAssistant Director\nGovernment Employee\nPrivate Employee\nPharmacist\nSecretary\nSenior Vice President\nPsychologist or Speech therapist\nConsultant\nAdvertising\nArmed Forces\nFood Scientist\nResource Manager\nProject Director\nRegional Managing Director\nInternal Auditor\nProject Manager\nRegional Head\nJournalist\nRetired officer\nPrincipal\nInvestment Banker\nVice Principal\nRetired\nBusiness Analyst\nManager Business Process",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "fo_remarks",
+   "fieldtype": "Data",
+   "label": "FO Remarks"
+  },
+  {
+   "fieldname": "mo_remarks",
+   "fieldtype": "Data",
+   "label": "MO Remarks"
+  },
+  {
+   "fieldname": "first",
+   "fieldtype": "Data",
+   "label": "First"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Last"
   }
  ],
  "image_field": "image",
  "links": [],
- "modified": "2023-02-06 12:25:25.197460",
+ "modified": "2024-03-19 16:48:37.182682",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student",

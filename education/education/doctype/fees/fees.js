@@ -5,9 +5,9 @@ frappe.provide("erpnext.accounts.dimensions");
 
 frappe.ui.form.on("Fees", {
 
-	company: function(frm) {
-		erpnext.accounts.dimensions.update_dimension(frm, frm.doctype);
-	},
+	// company: function(frm) {
+	// 	erpnext.accounts.dimensions.update_dimension(frm, frm.doctype);
+	// },
 
 	onload: function(frm) {
 		frm.set_query("academic_term", function() {
@@ -17,47 +17,48 @@ frappe.ui.form.on("Fees", {
 				}
 			};
 		});
-		frm.set_query("fee_structure", function() {
-			return{
-				"filters":{
-					"academic_year": frm.doc.academic_year,
-					"program": frm.doc.program,
-					"docstatus": 1
-				}
-			};
-		});
-		frm.set_query("program_enrollment", function() {
-			return{
-				"filters":{
-					"student": frm.doc.student,
-					"academic_year": frm.doc.academic_year,
-					"docstatus": 1
-				}
-			};
-		});
-		frm.set_query("receivable_account", function(doc) {
-			return {
-				filters: {
-					'account_type': 'Receivable',
-					'is_group': 0,
-					'company': doc.company
-				}
-			};
-		});
-		frm.set_query("income_account", function(doc) {
-			return {
-				filters: {
-					'account_type': 'Income Account',
-					'is_group': 0,
-					'company': doc.company
-				}
-			};
-		});
+		// frm.set_query("fee_structure", function() {
+		// 	return{
+		// 		"filters":{
+		// 			"academic_year": frm.doc.academic_year,
+		// 			"program": frm.doc.program,
+		// 			"docstatus": 1
+		// 		}
+		// 	};
+		// });
+
+		// frm.set_query("program_enrollment", function() {
+		// 	return{
+		// 		"filters":{
+		// 			"student": frm.doc.student,
+		// 			"academic_year": frm.doc.academic_year,
+		// 			"docstatus": 1
+		// 		}
+		// 	};
+		// });
+		// frm.set_query("receivable_account", function(doc) {
+		// 	return {
+		// 		filters: {
+		// 			'account_type': 'Receivable',
+		// 			'is_group': 0,
+		// 			'company': doc.company
+		// 		}
+		// 	};
+		// });
+		// frm.set_query("income_account", function(doc) {
+		// 	return {
+		// 		filters: {
+		// 			'account_type': 'Income Account',
+		// 			'is_group': 0,
+		// 			'company': doc.company
+		// 		}
+		// 	};
+		// });
 		if (!frm.doc.posting_date) {
 			frm.doc.posting_date = frappe.datetime.get_today();
 		}
 
-		erpnext.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
+		// erpnext.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
 	},
 
 	refresh: function(frm) {
@@ -68,34 +69,34 @@ frappe.ui.form.on("Fees", {
 			frm.set_df_property('posting_date', 'read_only', 1);
 			frm.set_df_property('posting_time', 'read_only', 1);
 		}
-		if(frm.doc.docstatus > 0) {
-			frm.add_custom_button(__('Accounting Ledger'), function() {
-				frappe.route_options = {
-					voucher_no: frm.doc.name,
-					from_date: frm.doc.posting_date,
-					to_date: moment(frm.doc.modified).format('YYYY-MM-DD'),
-					company: frm.doc.company,
-					group_by: '',
-					show_cancelled_entries: frm.doc.docstatus === 2
-				};
-				frappe.set_route("query-report", "General Ledger");
-			}, __("View"));
-			frm.add_custom_button(__("Payments"), function() {
-				frappe.set_route("List", "Payment Entry", {"Payment Entry Reference.reference_name": frm.doc.name});
-			}, __("View"));
-		}
-		if(frm.doc.docstatus===1 && frm.doc.outstanding_amount>0) {
-			frm.add_custom_button(__("Payment Request"), function() {
-				frm.events.make_payment_request(frm);
-			}, __('Create'));
-			frm.page.set_inner_btn_group_as_primary(__('Create'));
-		}
-		if(frm.doc.docstatus===1 && frm.doc.outstanding_amount!=0) {
-			frm.add_custom_button(__("Payment"), function() {
-				frm.events.make_payment_entry(frm);
-			}, __('Create'));
-			frm.page.set_inner_btn_group_as_primary(__('Create'));
-		}
+		// if(frm.doc.docstatus > 0) {
+		// 	frm.add_custom_button(__('Accounting Ledger'), function() {
+		// 		frappe.route_options = {
+		// 			voucher_no: frm.doc.name,
+		// 			from_date: frm.doc.posting_date,
+		// 			to_date: moment(frm.doc.modified).format('YYYY-MM-DD'),
+		// 			company: frm.doc.company,
+		// 			group_by: '',
+		// 			show_cancelled_entries: frm.doc.docstatus === 2
+		// 		};
+		// 		frappe.set_route("query-report", "General Ledger");
+		// 	}, __("View"));
+		// 	frm.add_custom_button(__("Payments"), function() {
+		// 		frappe.set_route("List", "Payment Entry", {"Payment Entry Reference.reference_name": frm.doc.name});
+		// 	}, __("View"));
+		// }
+		// if(frm.doc.docstatus===1 && frm.doc.outstanding_amount>0) {
+		// 	frm.add_custom_button(__("Payment Request"), function() {
+		// 		frm.events.make_payment_request(frm);
+		// 	}, __('Create'));
+		// 	frm.page.set_inner_btn_group_as_primary(__('Create'));
+		// }
+		// if(frm.doc.docstatus===1 && frm.doc.outstanding_amount!=0) {
+		// 	frm.add_custom_button(__("Payment"), function() {
+		// 		frm.events.make_payment_entry(frm);
+		// 	}, __('Create'));
+		// 	frm.page.set_inner_btn_group_as_primary(__('Create'));
+		// }
 	},
 
 	student: function(frm) {

@@ -9,8 +9,9 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "branch",
   "program",
-  "student_category",
+  "grade",
   "column_break_2",
   "academic_year",
   "academic_term",
@@ -49,12 +50,6 @@
    "options": "Program",
    "reqd": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "student_category",
-   "fieldtype": "Link",
-   "label": "Student Category",
-   "options": "Student Category"
   },
   {
    "fieldname": "column_break_2",
@@ -159,12 +154,26 @@
   {
    "fieldname": "dimension_col_break",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "label": "Grade",
+   "options": "Grade",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-flag",
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-09 16:09:50.125383",
+ "modified": "2024-03-20 12:04:57.207983",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Fee Structure",
@@ -213,7 +222,7 @@
    "write": 1
   }
  ],
- "search_fields": "program, student_category, academic_year",
+ "search_fields": "program, academic_year",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

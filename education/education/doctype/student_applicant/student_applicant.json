@@ -10,6 +10,13 @@
   "first_name",
   "middle_name",
   "last_name",
+  "column_break",
+  "branch",
+  "school",
+  "section",
+  "date_of_birth",
+  "place_of_birth",
+  "residence_address",
   "column_break_8",
   "naming_series",
   "application_date",
@@ -29,7 +36,6 @@
   "amended_from",
   "personal_details_tab",
   "section_break_4",
-  "date_of_birth",
   "gender",
   "blood_group",
   "column_break_12",
@@ -56,7 +62,9 @@
    "fieldtype": "Data",
    "in_global_search": 1,
    "label": "First Name",
-   "reqd": 1
+   "max_height": "15 rem",
+   "reqd": 1,
+   "width": "15 rem"
   },
   {
    "fieldname": "middle_name",
@@ -288,11 +296,43 @@
    "fieldtype": "Link",
    "label": "Country",
    "options": "Country"
+  },
+  {
+   "fieldname": "place_of_birth",
+   "fieldtype": "Data",
+   "label": "Place of Birth "
+  },
+  {
+   "fieldname": "residence_address",
+   "fieldtype": "Data",
+   "label": "Residence Address"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "school",
+   "fieldtype": "Link",
+   "label": "School",
+   "options": "School"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Column Break"
   }
  ],
  "image_field": "image",
  "links": [],
- "modified": "2023-01-17 10:50:53.972214",
+ "modified": "2024-03-01 13:29:57.195722",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student Applicant",

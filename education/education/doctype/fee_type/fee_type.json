@@ -2,29 +2,79 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:category_name",
- "creation": "2015-09-16 13:01:10.448734",
+ "autoname": "field:fee_type",
+ "creation": "2024-03-13 14:02:12.419273",
+ "default_view": "List",
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
-  "category_name",
+  "fee_type",
+  "column_break_cwamt",
   "billing",
+  "column_break_plh4t",
   "registration",
+  "column_break_fwcqx",
   "exams",
+  "column_break_djczc",
   "others",
+  "section_break_kvdvq",
   "description"
  ],
  "fields": [
   {
-   "fieldname": "category_name",
+   "fieldname": "fee_type",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name",
+   "label": "Fee Type",
    "oldfieldname": "earning_name",
    "oldfieldtype": "Data",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_cwamt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "billing",
+   "fieldtype": "Check",
+   "label": "Billing"
+  },
+  {
+   "fieldname": "column_break_plh4t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "registration",
+   "fieldtype": "Check",
+   "label": "Registration"
+  },
+  {
+   "fieldname": "column_break_fwcqx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "exams",
+   "fieldtype": "Check",
+   "label": "Exams"
+  },
+  {
+   "fieldname": "column_break_djczc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "others",
+   "fieldtype": "Check",
+   "label": "Others"
+  },
+  {
+   "fieldname": "section_break_kvdvq",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "description",
@@ -34,37 +84,14 @@
    "oldfieldname": "description",
    "oldfieldtype": "Small Text",
    "width": "300px"
-  },
-  {
-   "default": "0",
-   "fieldname": "billing",
-   "fieldtype": "Check",
-   "label": "Billing"
-  },
-  {
-   "default": "0",
-   "fieldname": "registration",
-   "fieldtype": "Check",
-   "label": "Registration"
-  },
-  {
-   "default": "0",
-   "fieldname": "exams",
-   "fieldtype": "Check",
-   "label": "Exams"
-  },
-  {
-   "fieldname": "others",
-   "fieldtype": "Data",
-   "label": "Others"
   }
  ],
  "icon": "fa fa-flag",
  "links": [],
- "modified": "2024-03-01 12:15:46.007586",
+ "modified": "2024-03-13 14:10:26.619122",
  "modified_by": "Administrator",
  "module": "Education",
- "name": "Fee Category",
+ "name": "Fee Type",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
